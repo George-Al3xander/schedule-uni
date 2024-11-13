@@ -1,3 +1,4 @@
+import TodayClasses from "@/components/today-classes.tsx";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/today")({
@@ -5,5 +6,5 @@ export const Route = createFileRoute("/today")({
 });
 
 function RouteComponent() {
-    return <div></div>;
+    return <TodayClasses />;
 }

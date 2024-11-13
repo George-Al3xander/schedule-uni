@@ -1,0 +1,40 @@
+{
+    "classDurationMinutes": 0,
+    "weekDays": [
+        [
+            {
+                "name": "Example Class 1",
+                "startTime": {
+                    "hour": 12,
+                    "minute": 0
+                },
+                "classType": "lecture",
+                "isNumerator": true
+            }
+        ],
+        [],
+        [],
+        [
+            {
+                "name": "Example Class 2",
+                "startTime": {
+                    "hour": 13,
+                    "minute": 0
+                },
+                "classType": "lecture"
+            },
+            {
+                "name": "Example Class 1",
+                "startTime": {
+                    "hour": 14,
+                    "minute": 30
+                },
+                "classType": "practice",
+                "isNumerator": false
+            }
+        ],
+        [],
+        [],
+        []
+    ]
+}

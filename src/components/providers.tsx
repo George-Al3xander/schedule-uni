@@ -2,6 +2,7 @@ import { FC, ReactNode } from "react";
 
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 
+import { RecoilRoot } from "recoil";
 import "../i18n";
 import { routeTree } from "../routeTree.gen.ts";
 const router = createRouter({ routeTree });
@@ -13,6 +14,8 @@ declare module "@tanstack/react-router" {
 }
 
 const Providers: FC<{ children?: ReactNode }> = () => (
-    <RouterProvider router={router} />
+    <RecoilRoot>
+        <RouterProvider router={router} />
+    </RecoilRoot>
 );
 export default Providers;

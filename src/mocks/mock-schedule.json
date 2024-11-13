@@ -1,0 +1,90 @@
+{
+  "classDurationMinutes": 90,
+  "weekDays": [
+    [
+      {
+        "name": "Example Class 1",
+        "startTime": {
+          "hour": 12,
+          "minute": 0
+        },
+        "classType": "lecture",
+        "isNumerator": true
+      },
+      {
+        "name": "Example Class 3",
+        "startTime": {
+          "hour": 15,
+          "minute": 0
+        },
+        "classType": "seminar",
+        "isNumerator": true
+      }
+    ],
+    [
+      {
+        "name": "Example Class 2",
+        "startTime": {
+          "hour": 9,
+          "minute": 30
+        },
+        "classType": "lecture",
+        "isNumerator": false
+      }
+    ],
+    [
+      {
+        "name": "Example Class 4",
+        "startTime": {
+          "hour": 11,
+          "minute": 0
+        },
+        "classType": "lab",
+        "isNumerator": true
+      }
+    ],
+    [
+      {
+        "name": "Example Class 2",
+        "startTime": {
+          "hour": 13,
+          "minute": 0
+        },
+        "classType": "lecture",
+        "isNumerator": true
+      },
+      {
+        "name": "Example Class 1",
+        "startTime": {
+          "hour": 14,
+          "minute": 30
+        },
+        "classType": "practice",
+        "isNumerator": false
+      }
+    ],
+    [
+      {
+        "name": "Example Class 5",
+        "startTime": {
+          "hour": 10,
+          "minute": 0
+        },
+        "classType": "workshop",
+        "isNumerator": true
+      }
+    ],
+    [
+      {
+        "name": "Example Class 3",
+        "startTime": {
+          "hour": 13,
+          "minute": 30
+        },
+        "classType": "seminar",
+        "isNumerator": false
+      }
+    ],
+    []
+  ]
+}
