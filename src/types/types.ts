@@ -1,3 +1,5 @@
+import { Dayjs } from "dayjs";
+
 export type TRoute = {
     path: string;
     title: string;
@@ -26,3 +28,5 @@ export type TSchedule = {
     classDurationMinutes: number;
     weekDays: TUniClass[][];
 };
+
+export type TExtendedDate = Dayjs | Date | string;
