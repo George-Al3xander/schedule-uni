@@ -22,10 +22,13 @@
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
         "resolveJsonModule": true,
+        "types": ["@testing-library/jest-dom"],
+        "esModuleInterop": true,
         "paths": {
             "@/public": ["./public/*"],
             "@/*": ["./src/*"]
         }
     },
+
     "include": ["src"]
 }

@@ -20,6 +20,7 @@
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
         "resolveJsonModule": true,
+        "esModuleInterop": true,
         "paths": {
             "@/public": ["./public/*"],
             "@/*": ["./src/*"]
