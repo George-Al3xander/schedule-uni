@@ -1,5 +1,10 @@
-import { convertExtendedDateToDayjs, isDateBetween } from "@/lib/utils.ts";
-import dayjs from "dayjs";
+import {
+    convertExtendedDateToDayjs,
+    isClassCurrent,
+    isDateBetween,
+} from "@/lib/utils.ts";
+import { TUniClass } from "@/types/types.ts";
+import dayjs, { Dayjs } from "dayjs";
 
 describe("utils", () => {
     describe("convertExtendedDateToDayjs", () => {
@@ -76,5 +81,45 @@ describe("utils", () => {
                 }),
             ).toBeFalsy();
         });
+    });
+});
+
+describe("isCurrentClass", () => {
+    const classMock: TUniClass = {
+        name: "Necessary class",
+        startTime: { hour: 12, minute: 0 },
+        classType: "lecture",
+    };
+    const params = {
+        classDuration: 80,
+        uniClass: classMock,
+    };
+
+    it("should return true for current class", () => {
+        const datesMock: Dayjs[] = [
+            dayjs().hour(12).minute(40),
+            dayjs().hour(12).minute(30),
+            dayjs().hour(13).minute(20),
+        ];
+
+        for (const currentTime of datesMock) {
+            expect(
+                isClassCurrent({
+                    currentTime: currentTime.second(0),
+                    ...params,
+                }),
+            ).toBe(true);
+        }
+    });
+    it("should return false for non-current class", () => {
+        const datesMock: Dayjs[] = [
+            dayjs().hour(10).minute(40),
+            dayjs().hour(11).minute(55),
+            dayjs().hour(13).minute(21),
+        ];
+
+        for (const currentTime of datesMock) {
+            expect(isClassCurrent({ currentTime, ...params })).toBe(false);
+        }
     });
 });

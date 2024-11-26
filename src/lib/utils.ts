@@ -1,4 +1,4 @@
-import { TExtendedDate, TTime } from "@/types/types.ts";
+import { TExtendedDate, TTime, TUniClass } from "@/types/types.ts";
 import { clsx, type ClassValue } from "clsx";
 import dayjs, { Dayjs } from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
@@ -42,4 +42,28 @@ export const isDateBetween = ({
         const dateStr = date.format("HH:mm");
         return dateStr === startStr || dateStr === endStr;
     }
+};
+
+export const isClassCurrent = ({
+    uniClass,
+    classDuration,
+    currentTime,
+}: {
+    uniClass: TUniClass;
+    classDuration: number;
+    currentTime: TExtendedDate;
+}): boolean => {
+    const now = convertExtendedDateToDayjs(currentTime);
+
+    const { startTime } = uniClass;
+    const thisClassStart = dayjs()
+        .hour(startTime.hour)
+        .minute(startTime.minute);
+
+    const thisClassEnd = dayjs(thisClassStart).add(classDuration, "minute");
+    return isDateBetween({
+        date: now,
+        startTime: thisClassStart,
+        endTime: thisClassEnd,
+    });
 };
