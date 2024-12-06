@@ -30,3 +30,8 @@ export type TSchedule = {
 };
 
 export type TExtendedDate = Dayjs | Date | string;
+
+export type TUniClassUtilBaseParams = {
+    classDuration: number;
+    currentTime: TExtendedDate;
+};

@@ -1,4 +1,9 @@
-import { TExtendedDate, TTime, TUniClass } from "@/types/types.ts";
+import {
+    TExtendedDate,
+    TTime,
+    TUniClass,
+    TUniClassUtilBaseParams,
+} from "@/types/types.ts";
 import { clsx, type ClassValue } from "clsx";
 import dayjs, { Dayjs } from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
@@ -50,9 +55,7 @@ export const isClassCurrent = ({
     currentTime,
 }: {
     uniClass: TUniClass;
-    classDuration: number;
-    currentTime: TExtendedDate;
-}): boolean => {
+} & TUniClassUtilBaseParams): boolean => {
     const now = convertExtendedDateToDayjs(currentTime);
 
     const { startTime } = uniClass;
